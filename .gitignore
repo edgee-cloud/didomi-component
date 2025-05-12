@@ -1,0 +1,4 @@
+# will have compiled files and executables
+/target
+/.edgee
+/component.wasm
