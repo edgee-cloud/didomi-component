@@ -1,7 +1,7 @@
 manifest-version = 1
 
 [component]
-name = "didomi"
+name = "didomi-consent-mapping"
 version = "1.0.0"
 
 category = "consent-management"
@@ -13,5 +13,5 @@ language = "Rust"
 wit-version = "1.0.0"
 
 [component.build]
-command = "cargo build --target wasm32-wasip2 --release --target-dir ./target && (mv ./target/wasm32-wasip2/release/example_rust_component.wasm ./component.wasm || true)"
+command = "cargo build --target wasm32-wasip2 --release --target-dir ./target && cp ./target/wasm32-wasip2/release/didomi_consent_mapping.wasm component.wasm"
 output_path = "component.wasm"

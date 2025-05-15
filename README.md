@@ -9,13 +9,13 @@
 </p>
 </div>
 
-<h1 align="center">Axeptio component for Edgee</h1>
+<h1 align="center">Didomi component for Edgee</h1>
 
 [![Coverage Status](https://coveralls.io/repos/github/edgee-cloud/didomi-component/badge.svg)](https://coveralls.io/github/edgee-cloud/didomi-component)
 [![GitHub issues](https://img.shields.io/github/issues/edgee-cloud/didomi-component.svg)](https://github.com/edgee-cloud/didomi-component/issues)
 [![Edgee Component Registry](https://img.shields.io/badge/Edgee_Component_Registry-Public-green.svg)](https://www.edgee.cloud/edgee/didomi-consent-mapping)
 
-This component enables seamless integration between [Edgee](https://www.edgee.cloud) and [Axeptio](https://www.axept.io), allowing you to use Axeptio as the Consent Management Platform on Edgee.
+This component enables seamless integration between [Edgee](https://www.edgee.cloud) and [Didomi](https://www.didomi.io/consent-management-platform), allowing you to use Didomi as the Consent Management Platform on Edgee.
 
 ## Quick Start
 
