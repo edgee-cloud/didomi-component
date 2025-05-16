@@ -13,5 +13,5 @@ language = "Rust"
 wit-version = "1.0.0"
 
 [component.build]
-command = "cargo build --target wasm32-wasip2 --release --target-dir ./target && cp ./target/wasm32-wasip2/release/didomi_consent_mapping.wasm component.wasm"
-output_path = "component.wasm"
+command = "cargo build --target wasm32-wasip2 --release --target-dir ./target && cp ./target/wasm32-wasip2/release/didomi_consent_mapping.wasm axeptio.wasm"
+output_path = "axeptio.wasm"
