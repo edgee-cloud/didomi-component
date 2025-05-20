@@ -1,0 +1,17 @@
+manifest-version = 1
+
+[component]
+name = "didomi-consent-mapping"
+version = "1.1.0"
+
+category = "consent-management"
+subcategory = "consent-mapping"
+description = "Didomi Consent Mapping lets you forward the user consent managed by Didomi CMP with all your other components"
+documentation = "https://www.edgee.cloud/docs/components/cmp/didomi-consent-mapping"
+repository = "https://github.com/edgee-cloud/didomi-component"
+language = "Rust"
+wit-version = "1.0.0"
+
+[component.build]
+command = "cargo build --target wasm32-wasip2 --release --target-dir ./target && cp ./target/wasm32-wasip2/release/didomi_consent_mapping.wasm didomi.wasm"
+output_path = "didomi.wasm"

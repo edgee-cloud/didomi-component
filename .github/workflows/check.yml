@@ -1,0 +1,50 @@
+name: Check component
+on:
+  push:
+    branches:
+      - main
+      - init
+    pull_request:
+
+env:
+  EDGEE_API_TOKEN: ${{ secrets.EDGEE_API_TOKEN }}
+
+jobs:
+  check:
+    name: Component check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          target: wasm32-wasip2
+          components: rustfmt, clippy
+
+      - name: Install Edgee CLI
+        uses: edgee-cloud/install-edgee-cli@v0.2.0
+
+      - name: Run edgee component wit
+        run: edgee component wit
+
+      - name: Cargo Check
+        run: cargo check
+
+      - name: Cargo Fmt Check
+        uses: actions-rust-lang/rustfmt@v1
+
+      - name: Clippy Lint
+        uses: wearerequired/lint-action@master
+        with:
+          clippy: true
+
+      - name: Cargo Build
+        run: edgee component build
+
+      - name: Run Tests
+        run: cargo test
+
+      - uses: taiki-e/install-action@cargo-llvm-cov
+      - run: cargo llvm-cov --all-features --lcov --output-path lcov.info
+      - uses: coverallsapp/github-action@v2
