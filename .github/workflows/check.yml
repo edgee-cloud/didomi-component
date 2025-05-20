@@ -31,10 +31,6 @@ jobs:
       - name: Cargo Check
         run: cargo check
 
-      - uses: taiki-e/install-action@cargo-llvm-cov
-      - run: cargo llvm-cov --all-features --lcov --output-path lcov.info
-      - uses: coverallsapp/github-action@v2
-
       - name: Cargo Fmt Check
         uses: actions-rust-lang/rustfmt@v1
 
@@ -48,3 +44,7 @@ jobs:
 
       - name: Run Tests
         run: cargo test
+
+      - uses: taiki-e/install-action@cargo-llvm-cov
+      - run: cargo llvm-cov --all-features --lcov --output-path lcov.info
+      - uses: coverallsapp/github-action@v2
